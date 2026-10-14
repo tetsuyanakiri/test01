@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เสน่ห์ด้ามขวานทอง: มรดกวัฒนธรรมภาคใต้</title>
+    
+    <!-- Google Fonts: Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        andaman: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        gold: {
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                        },
+                        midnight: {
+                            800: '#0f172a',
+                            900: '#0b132b',
+                            950: '#050a17',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Pattern Overlays */
+        .batik-bg-light {
+            background-color: #fffdf7;
+            background-image: radial-gradient(#d97706 0.75px, transparent 0.75px), radial-gradient(#0d9488 0.75px, #fffdf7 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            background-opacity: 0.05;
+        }
+
+        .dark .batik-bg-dark {
+            background-color: #080d1a;
+            background-image: radial-gradient(#eab308 0.85px, transparent 0.85px), radial-gradient(#6366f1 0.85px, #080d1a 0.85px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+        }
+
+        /* Glowing text in dark mode */
+        .dark .glow-gold {
+            text-shadow: 0 0 12px rgba(234, 179, 8, 0.5), 0 0 24px rgba(234, 179, 8, 0.2);
+        }
+
+        .dark .glow-box {
+            box-shadow: 0 0 20px rgba(202, 138, 4, 0.15);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ca8a04;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-amber-50/40 text-slate-800 dark:bg-midnight-950 dark:text-slate-100 font-sans transition-colors duration-300 batik-bg-light dark:batik-bg-dark min-h-screen">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-midnight-900/85 border-b border-amber-200/50 dark:border-amber-500/20 shadow-md transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-amber-500 via-amber-400 to-teal-500 flex items-center justify-center text-white font-bold text-xl shadow-lg transform group-hover:rotate-12 transition-transform">
+                        <i class="fa-solid fa-crown text-amber-100"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold bg-gradient-to-r from-amber-700 via-teal-700 to-amber-600 dark:from-amber-300 dark:via-cyan-300 dark:to-amber-400 bg-clip-text text-transparent block leading-none">
+                            เสน่ห์ด้ามขวานทอง
+                        </span>
+                        <span class="text-xs text-amber-800/80 dark:text-amber-300/80 tracking-wider">Southern Thai Culture</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#hero" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">หน้าหลัก</a>
+                    <a href="#arts" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">ศิลปะการแสดง</a>
+                    <a href="#cuisine" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">อาหารใต้</a>
+                    <a href="#traditions" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">ประเพณี</a>
+                    <a href="#architecture" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">สถาปัตยกรรม</a>
+                    <a href="#batik" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">ผ้าบาติก</a>
+                    <a href="#dictionary" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">ภาษาใต้</a>
+                    <a href="#synthesizer" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">ดนตรีใต้</a>
+                    <a href="#quiz" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">แบบทดสอบ</a>
+                </div>
+
+                <!-- Theme Switcher & Mobile Toggle -->
+                <div class="flex items-center space-x-3">
+                    <!-- Day/Night Toggle Button -->
+                    <button id="themeToggleBtn" onclick="toggleTheme()" class="relative p-2.5 rounded-full bg-gradient-to-r from-amber-200 via-amber-100 to-teal-100 dark:from-slate-800 dark:via-midnight-800 dark:to-indigo-950 border border-amber-300 dark:border-amber-500/40 text-amber-800 dark:text-amber-300 hover:shadow-lg transition-all duration-300 focus:outline-none" title="สลับธีม กลางวัน/กลางคืน">
+                        <div class="flex items-center space-x-2 px-1">
+                            <i id="sunIcon" class="fa-solid fa-sun text-amber-500 text-lg"></i>
+                            <i id="moonIcon" class="fa-solid fa-moon text-indigo-300 text-lg hidden"></i>
+                            <span id="themeLabel" class="text-xs font-semibold hidden sm:inline-block">โหมดกลางวัน</span>
+                        </div>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-amber-100 dark:hover:bg-slate-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white/95 dark:bg-midnight-900/95 border-b border-amber-200 dark:border-amber-500/20 px-4 pt-2 pb-4 space-y-2 text-sm font-medium">
+            <a href="#hero" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-amber-50 dark:hover:bg-slate-800">หน้าหลัก</a>
+            <a href="#arts" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-amber-50 dark:hover:bg-slate-800">ศิลปะการแสดง</a>
+            <a href="#cuisine" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-amber-50 dark:hover:bg-slate-800">อาหารใต้</a>
+            <a href="#traditions" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-amber-50 dark:hover:bg-slate-800">ประเพณี</a>
+            <a href="#architecture" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-amber-50 dark:hover:bg-slate-800">สถาปัตยกรรม</a>
+            <a href="#batik" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-amber-50 dark:hover:bg-slate-800">ผ้าบาติก</a>
+            <a href="#dictionary" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-amber-50 dark:hover:bg-slate-800">พจนานุกรมภาษาใต้</a>
+            <a href="#synthesizer" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-amber-50 dark:hover:bg-slate-800">เครื่องดนตรีใต้</a>
+            <a href="#quiz" onclick="toggleMobileMenu()" class="block py-2 px-3 rounded hover:bg-amber-50 dark:hover:bg-slate-800">แบบทดสอบ</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative overflow-hidden py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-amber-100/80 dark:bg-amber-500/10 border border-amber-300 dark:border-amber-500/30 text-amber-800 dark:text-amber-300 text-sm font-semibold">
+                        <i class="fa-solid fa-gem text-amber-500"></i>
+                        <span>อารยธรรมและมรดกทางวัฒนธรรมแห่งดินแดนด้ามขวาน</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        มรดกปักษ์ใต้ <br class="hidden sm:inline">
+                        <span class="bg-gradient-to-r from-amber-600 via-teal-600 to-amber-500 dark:from-amber-300 dark:via-cyan-400 dark:to-amber-400 bg-clip-text text-transparent glow-gold">
+                            ทรงคุณค่า มรดกโลก
+                        </span>
+                    </h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        สัมผัสความงดงามและเสน่ห์อันมีเอกลักษณ์เฉพาะตัวของ 14 จังหวัดภาคใต้ ทั้งศาสตร์และศิลป์แห่งมโนราห์ หนังตะลุง รสชาติอาหารจัดจ้านถึงใจ สถาปัตยกรรมทรงคุณค่า และวิถีชีวิตที่ทรงเสน่ห์
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#arts" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-semibold shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transform hover:-translate-y-0.5 transition-all">
+                            <i class="fa-solid fa-compass mr-2"></i>เริ่มท่องมรดกใต้
+                        </a>
+                        <a href="#synthesizer" class="px-8 py-3.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 font-semibold text-slate-800 dark:text-slate-200 shadow-sm transition-all">
+                            <i class="fa-solid fa-drum mr-2 text-amber-500"></i>ฟังเสียงดนตรีใต้
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Feature Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-amber-300/60 dark:border-amber-500/30 group">
+                        <img id="heroImg" src="https://clib.psu.ac.th/southerninfo/storages/pictures/Art/Manora/5.png" onerror="this.src='https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1000&q=80'" alt="มโนราห์ มรดกโลก" class="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">
+                            <span class="px-3 py-1 bg-amber-500/80 backdrop-blur-md rounded-lg text-xs font-bold uppercase tracking-wider w-max mb-2">UNESCO Intangible Cultural Heritage</span>
+                            <h3 class="text-2xl font-bold text-amber-300">การแสดงมโนราห์ (Nora)</h3>
+                            <p class="text-sm text-slate-200 mt-1">ได้รับการขึ้นทะเบียนเป็นมรดกทางวัฒนธรรมที่จับต้องไม่ได้ของมนุษยชาติ โดย UNESCO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: PERFORMING ARTS (ศิลปะการแสดง) -->
+    <section id="arts" class="py-16 bg-white/60 dark:bg-midnight-900/40 border-y border-amber-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-600 dark:text-amber-400 font-semibold text-sm uppercase tracking-wider">Performing Arts</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">ศิลปะการแสดงแห่งภูมิปัญญา</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">สัมผัสท่วงท่าอันอ่อนช้อยและความสนุกสนานจากมโนราห์และหนังตะลุง</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1: Manora -->
+                <div class="bg-white dark:bg-midnight-900 rounded-2xl overflow-hidden border border-amber-200/80 dark:border-amber-500/20 shadow-lg hover:shadow-xl transition-all flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://clib.psu.ac.th/southerninfo/storages/pictures/Art/Manora/5.png" onerror="this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80'" alt="มโนราห์" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-amber-500 text-slate-900 font-bold px-3 py-1 rounded-full text-xs shadow">
+                            นาฏศิลป์ชั้นสูง
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-amber-700 dark:text-amber-300">มโนราห์ (โนรา)</h3>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm mt-2 leading-relaxed">
+                                การแสดงพื้นบ้านที่เก่าแก่ที่สุดของภาคใต้ รวมศาสตร์แห่งการรำที่มีท่วงท่าเน้นความงดงามช้อยรำ เครื่องแต่งกายเทริดและเทอมหัวอันทรงเกียรติ พร้อมเสียงดนตรีประกอบจังหวะฉิ่ง ทับ โหม่ง ปี่ อย่างฉับไว
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs text-slate-500 dark:text-slate-400">
+                            <span><i class="fa-solid fa-location-dot text-amber-500 mr-1"></i>พัทลุง, สงขลา, นครศรีธรรมราช</span>
+                            <span class="font-semibold text-amber-600 dark:text-amber-400">มรดกยูเนสโก</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Nang Talung -->
+                <div class="bg-white dark:bg-midnight-900 rounded-2xl overflow-hidden border border-amber-200/80 dark:border-amber-500/20 shadow-lg hover:shadow-xl transition-all flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://www.silpa-mag.com/wp-content/uploads/2025/10/Cover-photo-7.jpg" onerror="this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80'" alt="หนังตะลุง" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-teal-600 text-white font-bold px-3 py-1 rounded-full text-xs shadow">
+                            มหรสพเงาแกะสลัก
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-amber-700 dark:text-amber-300">หนังตะลุง</h3>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm mt-2 leading-relaxed">
+                                ศิลปะการแสดงเชิดตัวหนังแกะสลักผ่านผ้าขาวฉายเงา ถ่ายทอดวรรณกรรม ข้อคิด การเมือง สังคม และมุกตลกขบขัน โดยมีตัวตลกหนังตะลุงอันเป็นเอกลักษณ์ครองใจคนใต้มานานนับร้อยปี
+                            </p>
+                        </div>
+                        <div>
+                            <button onclick="openTalungModal()" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white text-sm font-semibold shadow transition-all flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-users-viewfinder"></i>
+                                <span>เปิดดูตัวละครเอก (นายเท่ง, หนูนุ้ย, ยอดทอง)</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL: Nang Talung Characters -->
+    <div id="talungModal" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-midnight-900 rounded-3xl max-w-2xl w-full p-6 sm:p-8 border border-amber-300 dark:border-amber-500/30 shadow-2xl space-y-6 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeTalungModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="text-center">
+                <h3 class="text-2xl font-bold text-amber-600 dark:text-amber-400">ตัวละครเอกหนังตะลุงยอดฮิต</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">เอกลักษณ์เสียงพูด คำติดปาก และบุคลิกเฉพาะตัว</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <!-- Character 1 -->
+                <div class="p-4 bg-amber-50 dark:bg-slate-800/80 rounded-2xl border border-amber-200 dark:border-slate-700 text-center space-y-2">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-amber-500/20 flex items-center justify-center text-3xl text-amber-600">
+                        👳‍♂️
+                    </div>
+                    <h4 class="font-bold text-lg text-amber-700 dark:text-amber-300">นายเท่ง</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300">มือขวาชี้ฟ้า ฉลาดแกมโกง เสียงแหลมสูง พูดจริงทำจริง</p>
+                    <span class="inline-block px-2.5 py-1 bg-amber-200 dark:bg-amber-900/60 text-amber-800 dark:text-amber-200 text-xs rounded-full font-semibold">
+                        "หวาดดีครับพ่อแม่พี่น้อง!"
+                    </span>
+                </div>
+
+                <!-- Character 2 -->
+                <div class="p-4 bg-teal-50 dark:bg-slate-800/80 rounded-2xl border border-teal-200 dark:border-slate-700 text-center space-y-2">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-teal-500/20 flex items-center justify-center text-3xl text-teal-600">
+                        👶
+                    </div>
+                    <h4 class="font-bold text-lg text-teal-700 dark:text-teal-300">หนูนุ้ย</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300">จมูกวัว จมูกยื่น เสียงทุ้มอู้อี้ ซื่อบื้อ ซื่อสัตย์ แต่ขบขัน</p>
+                    <span class="inline-block px-2.5 py-1 bg-teal-200 dark:bg-teal-900/60 text-teal-800 dark:text-teal-200 text-xs rounded-full font-semibold">
+                        "ผมฉลาดน้อยไปนิดครับ!"
+                    </span>
+                </div>
+
+                <!-- Character 3 -->
+                <div class="p-4 bg-purple-50 dark:bg-slate-800/80 rounded-2xl border border-purple-200 dark:border-slate-700 text-center space-y-2">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-purple-500/20 flex items-center justify-center text-3xl text-purple-600">
+                        👴
+                    </div>
+                    <h4 class="font-bold text-lg text-purple-700 dark:text-purple-300">นายยอดทอง</h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-300">พุงนุ้ย ชอบเรื่องผู้หญิง โม้เก่ง ยอดนักกินอาหาร</p>
+                    <span class="inline-block px-2.5 py-1 bg-purple-200 dark:bg-purple-900/60 text-purple-800 dark:text-purple-200 text-xs rounded-full font-semibold">
+                        "เรื่องกินเรื่องใหญ่!"
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: SOUTHERN CUISINE (อาหารใต้) -->
+    <section id="cuisine" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-600 dark:text-amber-400 font-semibold text-sm uppercase tracking-wider">Southern Cuisine</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">อาหารใต้รสจัดจ้าน เผ็ดร้อนถึงใจ</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">สัมผัสรสชาติอันเข้มข้น หอมกลิ่นเครื่องเทศ พริกแกงใต้สด และขมิ้น</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Dish 1: Kaeng Tai Pla -->
+                <div class="bg-white dark:bg-midnight-900 rounded-2xl overflow-hidden border border-amber-200/80 dark:border-amber-500/20 shadow-lg hover:shadow-2xl transition-all flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://api2.krua.co/wp-content/uploads/2022/04/RT1713_SEOImage_1200x630.jpg" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80'" alt="แกงไตปลา" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                            เผ็ดระดับสูงสุด 🔥🔥🔥🔥🔥
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-800 dark:text-amber-300">แกงไตปลา (แกงพุงปลา)</h3>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm mt-2">
+                                แกงเอกลักษณ์ประจำภาคใต้ ใช้ไตปลาหมักปรุงรส หอมสมุนไพร หน่อไม้ ฟักทอง และเนื้อปลาย่าง
+                            </p>
+                        </div>
+                        <button onclick="openRecipeModal('แกงไตปลา', 'ไตปลาหมัก, ปลาย่าง (ปลาโอ/ปลาทู), พริกแกงใต้, หน หน่อไม้, ฟักทอง, ถั่วพู, ใบมะกรูด', '1. ต้มไตปลากับน้ำและสมุนไพรแล้วกรอง<br>2. ใส่พริกแกงใต้ ขมิ้น และผักต่างๆ<br>3. ใส่เนื้อปลาย่าง ชิมรสเผ็ดเค็มตามชอบ พร้อมเสิร์ฟคู่ผักสด')" class="w-full py-2 bg-amber-100 dark:bg-slate-800 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 text-amber-800 dark:text-amber-300 font-semibold rounded-xl text-sm transition-all">
+                            ดูสูตรและวิธีทำ
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dish 2: Khua Kling -->
+                <div class="bg-white dark:bg-midnight-900 rounded-2xl overflow-hidden border border-amber-200/80 dark:border-amber-500/20 shadow-lg hover:shadow-2xl transition-all flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://www.unileverfoodsolutions.co.th/dam/global-ufs/mcos/SEA/calcmenu/recipes/TH-recipes/red-meats-&-red-meat-dishes/%E0%B8%84%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B8%81%E0%B8%A5%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%AB%E0%B8%A1%E0%B8%B9/%E0%B8%84%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B8%81%E0%B8%A5%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%AB%E0%B8%A1%E0%B8%B9_header.jpg" onerror="this.src='https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80'" alt="คั่วกลิ้งหมู" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                            เผ็ดมาก 🔥🔥🔥🔥
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-800 dark:text-amber-300">คั่วกลิ้งหมู / ไก่</h3>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm mt-2">
+                                เมนูผัดแห้งเครื่องแกงใต้ รสชาติเผ็ดร้อนจัดจ้าน โรยใบมะกรูดหั่นฝอยและพริกไทยอ่อน
+                            </p>
+                        </div>
+                        <button onclick="openRecipeModal('คั่วกลิ้งหมู', 'เนื้อหมูสับ/สับละเอียด, พริกแกงคั่วกลิ้งใต้, กะปิแท้, ใบมะกรูดซอย, พริกชี้ฟ้า', '1. ผัดพริกแกงใต้กับกะปิในกระทะจนหอม<br>2. ใส่เนื้อหมูสับ ผัดคั่วจนแห้งงวด<br>3. โรยใบมะกรูดซอยและพริกสด คั่วต่อจนแห้งสนิท')" class="w-full py-2 bg-amber-100 dark:bg-slate-800 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 text-amber-800 dark:text-amber-300 font-semibold rounded-xl text-sm transition-all">
+                            ดูสูตรและวิธีทำ
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dish 3: Kanom Jeen Nam Ya Pu -->
+                <div class="bg-white dark:bg-midnight-900 rounded-2xl overflow-hidden border border-amber-200/80 dark:border-amber-500/20 shadow-lg hover:shadow-2xl transition-all flex flex-col group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://aowtakiabseafood.com/delivery/wp-content/uploads/2019/05/crab-spicy-curry.jpg" onerror="this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80'" alt="ขนมจีนน้ำยาปู" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                            เผ็ดกลมกล่อม 🔥🔥🔥
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-800 dark:text-amber-300">ขนมจีนน้ำยาปู</h3>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm mt-2">
+                                น้ำยาปูเนื้อแน่น หอมกลิ่นกะทิสดและขมิ้นใต้ ทานคู่กับเส้นขนมจีนและผักเหนาะสดนานาชนิด
+                            </p>
+                        </div>
+                        <button onclick="openRecipeModal('ขนมจีนน้ำยาปู', 'เนื้อกรรเชียงปู, พริกแกงใต้, กะทิสด, ขมิ้น, กะปิ, ใบมะกรูด, ผักเหนาะ', '1. โขลกพริกแกงใต้กับกะปิและขมิ้นสด<br>2. ตั้งกะทิผัดพริกแกงจนแตกมัน ปรุงรสตามชอบ<br>3. ใส่เนื้อปูก้อน กวนอย่างเบามือ เสิร์ฟพร้อมผักสด')" class="w-full py-2 bg-amber-100 dark:bg-slate-800 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 text-amber-800 dark:text-amber-300 font-semibold rounded-xl text-sm transition-all">
+                            ดูสูตรและวิธีทำ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL: Recipe Details -->
+    <div id="recipeModal" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-midnight-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 border border-amber-300 dark:border-amber-500/30 shadow-2xl space-y-5 relative">
+            <button onclick="closeRecipeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="recipeTitle" class="text-2xl font-bold text-amber-600 dark:text-amber-400"></h3>
+            <div>
+                <h4 class="font-semibold text-slate-800 dark:text-slate-200 mb-1 text-sm"><i class="fa-solid fa-mortar-pestle text-amber-500 mr-2"></i>วัตถุดิบสำคัญ:</h4>
+                <p id="recipeIngredients" class="text-sm text-slate-600 dark:text-slate-300 bg-amber-50 dark:bg-slate-800 p-3 rounded-xl border border-amber-100 dark:border-slate-700"></p>
+            </div>
+            <div>
+                <h4 class="font-semibold text-slate-800 dark:text-slate-200 mb-1 text-sm"><i class="fa-solid fa-utensils text-amber-500 mr-2"></i>วิธีทำโดยสังเขป:</h4>
+                <p id="recipeInstructions" class="text-sm text-slate-600 dark:text-slate-300 bg-amber-50 dark:bg-slate-800 p-3 rounded-xl border border-amber-100 dark:border-slate-700 leading-relaxed"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3: TRADITIONS & FESTIVALS (ประเพณีและเทศกาล) -->
+    <section id="traditions" class="py-16 bg-white/60 dark:bg-midnight-900/40 border-y border-amber-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-600 dark:text-amber-400 font-semibold text-sm uppercase tracking-wider">Traditions & Festivals</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">ประเพณีและเทศกาลอันศักดิ์สิทธิ์</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">พลังแห่งความศรัทธาและความกตัญญููที่สืบทอดกันมาจากรุ่นสู่รุ่น</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Tradition 1: Chak Phra -->
+                <div class="bg-white dark:bg-midnight-900 rounded-2xl p-6 border border-amber-200/80 dark:border-amber-500/20 shadow-md flex flex-col md:flex-row gap-6 items-center">
+                    <img src="https://clib.psu.ac.th/southerninfo/storages/pictures/Traditional%20Chak%20Phra/DSC_1292.JPG" onerror="this.src='https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=800&q=80'" alt="ประเพณีชักพระ" class="w-full md:w-48 h-44 object-cover rounded-xl shadow">
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase">ออกพรรษา</span>
+                        <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100">ประเพณีชักพระ (ลากพระ)</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            ประเพณีปักษ์ใต้ช่วงออกพรรษา อัญเชิญพระพุทธรูปประดิษฐานบนเรือพระอันประดิดประดอยอย่างงดงาม ชักลากทางบกและทางน้ำเพื่อความเป็นสิริมงคล
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tradition 2: Sat Duean Sip -->
+                <div class="bg-white dark:bg-midnight-900 rounded-2xl p-6 border border-amber-200/80 dark:border-amber-500/20 shadow-md flex flex-col md:flex-row gap-6 items-center">
+                    <img src="https://www.thaipr.net/wp-content/uploads/2025/09/000_Cover-ba8cbfa4-e1758529494119.jpg" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80'" alt="ประเพณีสารทเดือนสิบ" class="w-full md:w-48 h-44 object-cover rounded-xl shadow">
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase">แรม 15 ค่ำ เดือน 10</span>
+                        <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100">ประเพณีสารทเดือนสิบ</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            งานบุญอุทิศส่วนกุศลให้บรรพบุรุษผู้ลับล่วง (เปรต) เอกลักษณ์สำคัญคือ **ขนม 5 อย่าง** ได้แก่ ขนมพอง (แพ), ขนมลา (เสื้อผ้า), ขนมกง (เครื่องประดับ), ขนมดีซัม (เงินตรา), ขนมบ้า (สะบ้า)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: ARCHITECTURE & HERITAGE (สถาปัตยกรรม) -->
+    <section id="architecture" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-600 dark:text-amber-400 font-semibold text-sm uppercase tracking-wider">Architecture & Heritage</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">มรดกทางสถาปัตยกรรมและพหุวัฒนธรรม</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">ความงดงามของการผสมผสานอารยธรรมตะวันตก ตะวันออก และอิสลามอย่างลงตัว</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Sino-Portuguese -->
+                <div class="relative group rounded-3xl overflow-hidden shadow-lg h-80 border border-amber-200 dark:border-slate-800">
+                    <img src="https://cbtthailand.dasta.or.th/upload-file-api/Resources/RelateAttraction/Images/RAT830004/1.jpeg" onerror="this.src='https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80'" alt="ชิโนโปรตุกีส" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent p-6 flex flex-col justify-end text-white">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Phuket Old Town</span>
+                        <h3 class="text-2xl font-bold text-white">ตึกเก่าชิโนโปรตุกีส (Sino-Portuguese)</h3>
+                        <p class="text-sm text-slate-300 mt-1">
+                            สถาปัตยกรรมตะวันตกผสมผสานจีน ยุคเหมืองแร่ดีบุกเฟื่องฟู ลวดลายปูนปั้นประณีตและสีสันพาสเทลสวยงาม
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Songkhla Mosque -->
+                <div class="relative group rounded-3xl overflow-hidden shadow-lg h-80 border border-amber-200 dark:border-slate-800">
+                    <img src="https://www.cicot.or.th/storages/mosques/illustration/11741007_1675145476052599_9163471738377205332_o.jpg" onerror="this.src='https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80'" alt="มัสยิดกลางสงขلا" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent p-6 flex flex-col justify-end text-white">
+                        <span class="text-teal-300 text-xs font-bold uppercase tracking-wider">Songkhla Landmark</span>
+                        <h3 class="text-2xl font-bold text-white">มัสยิดกลางจังหวัดสงขลา</h3>
+                        <p class="text-sm text-slate-300 mt-1">
+                            "ทัชมาฮาลเมืองไทย" โดดเด่นด้วยสระน้ำยาวทอดหน้ามัสยิด ทัศนียภาพงดงามตระการตาในยามพระอาทิตย์อัสดง
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: BATIK CRAFTS (ผ้าบาติกและหัตถกรรม) -->
+    <section id="batik" class="py-16 bg-white/60 dark:bg-midnight-900/40 border-y border-amber-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-4">
+                    <span class="text-amber-600 dark:text-amber-400 font-semibold text-sm uppercase tracking-wider">Southern Batik Crafts</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold">ศิลปะผ้าบาติกและผ้ามัดย้อม</h2>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        ภูมิปัญญาหัตถศิลป์ใช้เทียนเขียนลวดลายธรรมชาติ ทะเลอันดามัน ปะการัง พันธุ์ไม้ และลวดลายปักษ์ใต้ที่มีสีสันสดใสเป็นเอกลักษณ์เฉพาะตัว
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 bg-amber-50 dark:bg-slate-800 rounded-xl border border-amber-200 dark:border-slate-700">
+                            <h4 class="font-bold text-amber-700 dark:text-amber-300">ลายพัด / ลายคลื่น</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">แรงบันดาลใจจากสายลมและเกลียวคลื่นทะเล</p>
+                        </div>
+                        <div class="p-4 bg-teal-50 dark:bg-slate-800 rounded-xl border border-teal-200 dark:border-slate-700">
+                            <h4 class="font-bold text-teal-700 dark:text-teal-300">ลายดอกไม้ทะเล</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">สะท้อนความสมบูรณ์ของระบบนิเวศใต้ท้องทะเล</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border-2 border-amber-300 dark:border-amber-500/30">
+                        <img src="https://article.tcdc.or.th/uploads/article-detail-img/tmp/el1Ad33ECqy7K3UJLvfq7uUXTjoyRBMxrxoh04pM.jpeg?14072023094042" onerror="this.src='https://images.unsplash.com/photo-1606744888344-493238951221?auto=format&fit=crop&w=800&q=80'" alt="ผ้าบาติก" class="w-full h-[360px] object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: INTERACTIVE DIALECT DICTIONARY (พจนานุกรมภาษาใต้) -->
+    <section id="dictionary" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-amber-600 dark:text-amber-400 font-semibold text-sm uppercase tracking-wider">Interactive Dialect Dictionary</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">พจนานุกรมภาษาใต้ (แหลงใต้)</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">ค้นหาคำศัพท์ใต้พร้อมฟังก์ชัน **กดฟังเสียงอ่านภาษาใต้** ด้วย AI Speech</p>
+            </div>
+
+            <!-- Search Box -->
+            <div class="max-w-xl mx-auto mb-8">
+                <div class="relative">
+                    <input type="text" id="dictSearchInput" onkeyup="filterDictionary()" placeholder="ค้นหาคำศัพท์ใต้ หรือ คำแปล..." class="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-amber-300 dark:border-slate-700 bg-white dark:bg-midnight-900 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-sm">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-slate-400"></i>
+                </div>
+            </div>
+
+            <!-- Words Grid -->
+            <div id="dictGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamically Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: RHYTHM SYNTHESIZER (เครื่องดนตรีสังเคราะห์มโนราห์) -->
+    <section id="synthesizer" class="py-16 bg-white/60 dark:bg-midnight-900/40 border-y border-amber-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-600 dark:text-amber-400 font-semibold text-sm uppercase tracking-wider">Southern Rhythm Synthesizer</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">จำลองเครื่องดนตรีและจังหวะมโนราห์</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">ทดลองกดเล่นเสียงเครื่องดนตรีใต้ที่สังเคราะห์ด้วย Web Audio API หรือเปิดจังหวะรำมโนราห์</p>
+            </div>
+
+            <div class="bg-gradient-to-b from-amber-50 to-amber-100/50 dark:from-slate-900 dark:to-midnight-900 p-8 rounded-3xl border border-amber-300 dark:border-amber-500/30 shadow-xl max-w-4xl mx-auto space-y-8">
+                <!-- Controls -->
+                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-amber-200 dark:border-slate-800 pb-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
+                        <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Web Audio Sound Engine: Active</span>
+                    </div>
+                    <button id="autoLoopBtn" onclick="toggleAutoBeat()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-teal-600 text-white font-semibold text-sm shadow hover:shadow-lg transition-all flex items-center space-x-2">
+                        <i id="loopIcon" class="fa-solid fa-play"></i>
+                        <span id="loopBtnText">เปิดเล่นจังหวะมโนราห์วนลูป</span>
+                    </button>
+                </div>
+
+                <!-- Instrument Pads -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                    <!-- Pad 1: Thap -->
+                    <button onclick="playInstrument('thap')" class="p-6 rounded-2xl bg-white dark:bg-slate-800 border-2 border-amber-400 dark:border-amber-500 hover:scale-105 hover:shadow-xl active:scale-95 transition-all text-center space-y-3 group">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center text-2xl text-amber-600 dark:text-amber-300 group-hover:rotate-12 transition-transform">
+                            🥁
+                        </div>
+                        <h4 class="font-bold text-slate-800 dark:text-slate-100">ทับมโนราห์</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">กลองหน้าเดียว ให้จังหวะรำ</p>
+                    </button>
+
+                    <!-- Pad 2: Mong -->
+                    <button onclick="playInstrument('mong')" class="p-6 rounded-2xl bg-white dark:bg-slate-800 border-2 border-amber-400 dark:border-amber-500 hover:scale-105 hover:shadow-xl active:scale-95 transition-all text-center space-y-3 group">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-teal-100 dark:bg-teal-900/50 flex items-center justify-center text-2xl text-teal-600 dark:text-teal-300 group-hover:rotate-12 transition-transform">
+                            🔔
+                        </div>
+                        <h4 class="font-bold text-slate-800 dark:text-slate-100">โหม่ง</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">ฆ้องคู่กังวานต่ำ-สูง</p>
+                    </button>
+
+                    <!-- Pad 3: Ching -->
+                    <button onclick="playInstrument('ching')" class="p-6 rounded-2xl bg-white dark:bg-slate-800 border-2 border-amber-400 dark:border-amber-500 hover:scale-105 hover:shadow-xl active:scale-95 transition-all text-center space-y-3 group">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-2xl text-indigo-600 dark:text-indigo-300 group-hover:rotate-12 transition-transform">
+                            ✨
+                        </div>
+                        <h4 class="font-bold text-slate-800 dark:text-slate-100">ฉิ่ง</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">ฉิ่งแหลมกังวานคุมจังหวะ</p>
+                    </button>
+
+                    <!-- Pad 4: Pi Nok -->
+                    <button onclick="playInstrument('pi')" class="p-6 rounded-2xl bg-white dark:bg-slate-800 border-2 border-amber-400 dark:border-amber-500 hover:scale-105 hover:shadow-xl active:scale-95 transition-all text-center space-y-3 group">
+                        <div class="w-16 h-16 mx-auto rounded-full bg-rose-100 dark:bg-rose-900/50 flex items-center justify-center text-2xl text-rose-600 dark:text-rose-300 group-hover:rotate-12 transition-transform">
+                            🎶
+                        </div>
+                        <h4 class="font-bold text-slate-800 dark:text-slate-100">ปี่นอก</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">ปี่ท่วงทำนองแหลมสูง</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: QUIZ / MINI-GAME (แบบทดสอบความรู้) -->
+    <section id="quiz" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-600 dark:text-amber-400 font-semibold text-sm uppercase tracking-wider">Culture Knowledge Quiz</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">แบบทดสอบความรู้ภูมิปัญญาภาคใต้</h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-2">ตอบคำถาม 5 ข้อ เพื่อรับตราประทับผู้เชี่ยวชาญวัฒนธรรมปักษ์ใต้</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto bg-white dark:bg-midnight-900 rounded-3xl border border-amber-200 dark:border-amber-500/30 p-8 shadow-xl relative overflow-hidden">
+                <!-- Quiz Container -->
+                <div id="quizBox">
+                    <div class="flex justify-between items-center mb-6 text-sm font-semibold text-amber-600 dark:text-amber-400">
+                        <span id="quizProgress">ข้อที่ 1 จาก 5</span>
+                        <span id="quizScore">คะแนน: 0</span>
+                    </div>
+                    <h3 id="quizQuestion" class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-6"></h3>
+                    <div id="quizOptions" class="space-y-3">
+                        <!-- Options populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Quiz Result Badge -->
+                <div id="quizResult" class="hidden text-center space-y-6 py-6">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center shadow-lg text-white text-4xl ring-8 ring-amber-100 dark:ring-amber-900/40">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800 dark:text-slate-100">ตราประทับมรดกปักษ์ใต้</h3>
+                        <p id="resultText" class="text-amber-600 dark:text-amber-400 font-semibold text-lg mt-1"></p>
+                    </div>
+                    <button onclick="resetQuiz()" class="px-8 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-semibold shadow">
+                        ทำแบบทดสอบอีกครั้ง
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex justify-center items-center space-x-2 text-amber-400 font-bold text-lg">
+                <i class="fa-solid fa-crown"></i>
+                <span>เสน่ห์ด้ามขวานทอง: มรดกวัฒนธรรมภาคใต้</span>
+            </div>
+            <p class="text-sm text-slate-400 max-w-xl mx-auto">
+                ร่วมสืบสาน อนุรักษ์ และเผยแพร่มรดกทางวัฒนธรรมและภูมิปัญญาอันทรงคุณค่าของ 14 จังหวัดภาคใต้ให้คงอยู่สืบไป
+            </p>
+            <p class="text-xs text-slate-500 pt-4">
+                © 2026 Southern Thai Culture Showcase. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT CODE -->
+    <script>
+        /* ----------------------------------------------------
+           1. THEME SWITCHER (Day / Night Mode)
+        ---------------------------------------------------- */
+        function toggleTheme() {
+            const html = document.documentElement;
+            const sunIcon = document.getElementById('sunIcon');
+            const moonIcon = document.getElementById('moonIcon');
+            const themeLabel = document.getElementById('themeLabel');
+
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                themeLabel.innerText = "โหมดกลางวัน";
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                themeLabel.innerText = "โหมดกลางคืน";
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        /* ----------------------------------------------------
+           2. DICTIONARY DATA & SEARCH WITH SPEECH
+        ---------------------------------------------------- */
+        const dialectWords = [
+            { word: "หรอยจังหู้", type: "คำอุทาน/กริยา", meaning: "อร่อยมาก / สนุกมาก / ยอดเยี่ยมที่สุด" },
+            { word: "แหลง", type: "กริยา", meaning: "พูด / เอื้อนเอ่ย (เช่น แหลงใต้ = พูดภาษาใต้)" },
+            { word: "หลบบ้าน", type: "กริยา", meaning: "กลับบ้าน" },
+            { word: "พรื้อ", type: "คำถาม", meaning: "เป็นอย่างไร / อย่างไรบ้าง (เช่น เป็นพรื้อมั่ง = เป็นอย่างไรบ้าง)" },
+            { word: "ไซร", type: "คำถาม", meaning: "ทำไม / ด้วยเหตุใด" },
+            { word: "ขี้หก", type: "กริยา", meaning: "โกหก / พูดไม่จริง" },
+            { word: "หลาด", type: "นาม", meaning: "ตลาด" },
+            { word: "หวังเวิด", type: "กริยา", meaning: "เป็นห่วง / คิดถึง / กังวล" },
+            { word: "พันนี้", type: "วิเศษณ์", meaning: "แบบนี้ / อย่างนี้" }
+        ];
+
+        function renderDictionary(words) {
+            const grid = document.getElementById('dictGrid');
+            grid.innerHTML = '';
+
+            words.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-white dark:bg-midnight-900 rounded-2xl p-5 border border-amber-200/80 dark:border-amber-500/20 shadow hover:shadow-lg transition-all space-y-3 flex flex-col justify-between";
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <h4 class="text-xl font-bold text-amber-700 dark:text-amber-300">${item.word}</h4>
+                            <span class="text-xs px-2.5 py-1 bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300 rounded-full font-semibold">${item.type}</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm mt-2">${item.meaning}</p>
+                    </div>
+                    <button onclick="speakWord('${item.word}')" class="w-full py-2 rounded-xl bg-amber-50 dark:bg-slate-800 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 text-amber-800 dark:text-amber-300 font-semibold text-xs transition-all flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-volume-high"></i>
+                        <span>ฟังเสียงอ่าน (${item.word})</span>
+                    </button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterDictionary() {
+            const query = document.getElementById('dictSearchInput').value.toLowerCase();
+            const filtered = dialectWords.filter(item => 
+                item.word.toLowerCase().includes(query) || 
+                item.meaning.toLowerCase().includes(query)
+            );
+            renderDictionary(filtered);
+        }
+
+        function speakWord(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'th-TH';
+                utterance.rate = 0.9;
+                window.speechSynthesis.cancel(); // stop current speech
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("เบราว์เซอร์ของคุณไม่รองรับระบบสังเคราะห์เสียง");
+            }
+        }
+
+        /* ----------------------------------------------------
+           3. MODAL CONTROLS
+        ---------------------------------------------------- */
+        function openTalungModal() {
+            document.getElementById('talungModal').classList.remove('hidden');
+        }
+        function closeTalungModal() {
+            document.getElementById('talungModal').classList.add('hidden');
+        }
+
+        function openRecipeModal(title, ingredients, instructions) {
+            document.getElementById('recipeTitle').innerText = title;
+            document.getElementById('recipeIngredients').innerText = ingredients;
+            document.getElementById('recipeInstructions').innerHTML = instructions;
+            document.getElementById('recipeModal').classList.remove('hidden');
+        }
+        function closeRecipeModal() {
+            document.getElementById('recipeModal').classList.add('hidden');
+        }
+
+        /* ----------------------------------------------------
+           4. WEB AUDIO SYNTHESIZER (เครื่องดนตรีใต้)
+        ---------------------------------------------------- */
+        let audioCtx = null;
+
+        function getAudioContext() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            return audioCtx;
+        }
+
+        function playInstrument(type) {
+            const ctx = getAudioContext();
+            const now = ctx.currentTime;
+
+            if (type === 'thap') {
+                // Thap drum sound (Bass + Noise slap)
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(150, now);
+                osc.frequency.exponentialRampToValueAtTime(30, now + 0.25);
+                gain.gain.setValueAtTime(1, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.25);
+            } else if (type === 'mong') {
+                // Mong gong sound (Deep metallic)
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(220, now);
+                gain.gain.setValueAtTime(0.8, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now);
+                osc.stop(now + 1.2);
+            } else if (type === 'ching') {
+                // Ching bell sound (High resonance)
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(2400, now);
+                gain.gain.setValueAtTime(0.6, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.8);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.8);
+            } else if (type === 'pi') {
+                // Pi Nok flute vibrato
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(784, now); // G5 note
+                osc.frequency.setValueAtTime(880, now + 0.1);
+                gain.gain.setValueAtTime(0.3, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.5);
+            }
+        }
+
+        // Auto Beat Generator Loop
+        let beatInterval = null;
+        let isPlayingBeat = false;
+
+        function toggleAutoBeat() {
+            const btnText = document.getElementById('loopBtnText');
+            const loopIcon = document.getElementById('loopIcon');
+
+            if (isPlayingBeat) {
+                clearInterval(beatInterval);
+                isPlayingBeat = false;
+                btnText.innerText = "เปิดเล่นจังหวะมโนราห์วนลูป";
+                loopIcon.className = "fa-solid fa-play";
+            } else {
+                isPlayingBeat = true;
+                btnText.innerText = "หยุดเล่นจังหวะ";
+                loopIcon.className = "fa-solid fa-stop";
+                
+                let step = 0;
+                beatInterval = setInterval(() => {
+                    if (step % 4 === 0) playInstrument('mong');
+                    if (step % 2 === 0) playInstrument('ching');
+                    playInstrument('thap');
+                    if (step % 3 === 0) playInstrument('pi');
+                    step = (step + 1) % 8;
+                }, 350);
+            }
+        }
+
+        /* ----------------------------------------------------
+           5. QUIZ GAME ENGINE
+        ---------------------------------------------------- */
+        const quizData = [
+            {
+                question: "การแสดงมโนราห์ได้รับการขึ้นทะเบียนมรดกทางวัฒนธรรมที่จับต้องไม่ได้จากสถาบันใด?",
+                options: ["UNESCO", "UNICEF", "WHO", "ASEAN Culture Heritage"],
+                answer: 0
+            },
+            {
+                question: "ข้อใดคือขนมมงคลในประเพณีสารทเดือนสิบที่เปรียบเสมือน 'เสื้อผ้าเครื่องแต่งกาย' ให้แก่บรรพบุรุษ?",
+                options: ["ขนมพอง", "ขนมลา", "ขนมกง", "ขนมบ้า"],
+                answer: 1
+            },
+            {
+                question: "คำว่า 'หรอยจังหู้' ในภาษาใต้มีความหมายตรงกับข้อใด?",
+                options: ["โกหกมาก", "อร่อย / สนุกมาก", "ไปไหนมา", "กังวลใจ"],
+                answer: 1
+            },
+            {
+                question: "ตึกเก่าสถาปัตยกรรมชิโนโปรตุกีส (Sino-Portuguese) อันขึ้นชื่อตั้งอยู่ที่จังหวัดใด?",
+                options: ["สงขลา", "พัทลุง", "ภูเก็ต", "นครศรีธรรมราช"],
+                answer: 2
+            },
+            {
+                question: "ตัวละครตลกหนังตะลุงที่มีลักษณะจมูกยื่นคล้ายจมูกวัว พูดจาอู้อี้ ซื่อสัตย์ คือใคร?",
+                options: ["นายเท่ง", "หนูนุ้ย", "นายยอดทอง", "นายสีแก้ว"],
+                answer: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuizQuestion() {
+            const q = quizData[currentQuestion];
+            document.getElementById('quizProgress').innerText = `ข้อที่ ${currentQuestion + 1} จาก ${quizData.length}`;
+            document.getElementById('quizScore').innerText = `คะแนน: ${score}`;
+            document.getElementById('quizQuestion').innerText = q.question;
+
+            const optionsContainer = document.getElementById('quizOptions');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl border border-amber-200 dark:border-slate-700 bg-amber-50/50 dark:bg-slate-800/60 hover:bg-amber-500 hover:text-white dark:hover:bg-amber-500 font-medium transition-all text-sm";
+                btn.innerText = `${idx + 1}. ${opt}`;
+                btn.onclick = () => checkAnswer(idx);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIndex) {
+            if (selectedIndex === quizData[currentQuestion].answer) {
+                score++;
+            }
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                loadQuizQuestion();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        function showQuizResult() {
+            document.getElementById('quizBox').classList.add('hidden');
+            const resultBox = document.getElementById('quizResult');
+            resultBox.classList.remove('hidden');
+            
+            const resultText = document.getElementById('resultText');
+            resultText.innerText = `คุณได้ ${score} / ${quizData.length} คะแนน - ${score >= 4 ? 'ระดับ: ผู้เชี่ยวชาญวัฒนธรรมปักษ์ใต้ 🏆' : 'ระดับ: ผู้สนใจมรดกใต้ 🌟'}`;
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quizResult').classList.add('hidden');
+            document.getElementById('quizBox').classList.remove('hidden');
+            loadQuizQuestion();
+        }
+
+        /* ----------------------------------------------------
+           6. INITIALIZATION ON PAGE LOAD
+        ---------------------------------------------------- */
+        window.onload = function() {
+            // Render initial dictionary
+            renderDictionary(dialectWords);
+
+            // Load initial quiz
+            loadQuizQuestion();
+
+            // Check saved theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+                document.getElementById('sunIcon').classList.add('hidden');
+                document.getElementById('moonIcon').classList.remove('hidden');
+                document.getElementById('themeLabel').innerText = "โหมดกลางคืน";
+            }
+        };
+    </script>
+</body>
+</html>
